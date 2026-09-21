@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>M5 3D EXPERIENCE</title>
+
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Interactive 3D M5 automotive experience">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loading-content">
+
+      <div class="loading-logo">
+        <div class="m-logo">M</div>
+        <span>5</span>
+      </div>
+
+      <div class="loading-title">M5 3D EXPERIENCE</div>
+      <div class="loading-subtitle">INITIALIZING 3D ENGINE</div>
+
+      <div class="loading-bar">
+        <div id="loading-progress"></div>
+      </div>
+
+      <div id="loading-percent">0%</div>
+
+    </div>
+  </div>
+
+
+  <!-- MAIN APP -->
+  <main id="app">
+
+    <!-- BACKGROUND -->
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="roundel">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="brand-text">
+          <strong>M5</strong>
+          <small>3D EXPERIENCE</small>
+        </div>
+
+      </div>
+
+
+      <button id="menu-button" class="menu-button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </header>
+
+
+    <!-- 3D SHOWROOM -->
+    <section id="showroom">
+
+      <div id="car-container">
+
+        <canvas id="car-canvas"></canvas>
+
+        <div id="model-status">
+          <span class="status-dot"></span>
+          <span id="status-text">3D ENGINE READY</span>
+        </div>
+
+      </div>
+
+
+      <!-- CAR INFORMATION -->
+      <div class="car-information">
+
+        <div class="small-label">
+          HIGH PERFORMANCE LUXURY SEDAN
+        </div>
+
+        <h1>M5</h1>
+
+        <p>
+          A CODE-BUILT 3D AUTOMOTIVE EXPERIENCE
+        </p>
+
+      </div>
+
+
+      <!-- ROTATION HINT -->
+      <div class="interaction-hint">
+        <span class="gesture-icon">↔</span>
+        <span>DRAG TO ROTATE</span>
+      </div>
+
+
+      <!-- CONTROL PANEL -->
+      <div class="controls">
+
+        <button id="rotate-left" class="control-button" aria-label="Rotate left">
+          <span>↶</span>
+        </button>
+
+        <button id="reset-view" class="control-button main-control" aria-label="Reset view">
+          <span>360°</span>
+        </button>
+
+        <button id="rotate-right" class="control-button" aria-label="Rotate right">
+          <span>↷</span>
+        </button>
+
+        <button id="zoom-out" class="control-button" aria-label="Zoom out">
+          <span>−</span>
+        </button>
+
+        <button id="zoom-in" class="control-button" aria-label="Zoom in">
+          <span>+</span>
+        </button>
+
+      </div>
+
+
+      <!-- MODEL DETAILS -->
+      <div class="model-details">
+
+        <div class="detail-item">
+          <span>MODEL</span>
+          <strong>M5</strong>
+        </div>
+
+        <div class="detail-item">
+          <span>CLASS</span>
+          <strong>M</strong>
+        </div>
+
+        <div class="detail-item">
+          <span>BODY</span>
+          <strong>SEDAN</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BOTTOM SPEC BAR -->
+    <section class="spec-bar">
+
+      <div class="spec-item">
+        <span class="spec-icon">⚡</span>
+        <div>
+          <small>POWER</small>
+          <strong>M PERFORMANCE</strong>
+        </div>
+      </div>
+
+      <div class="spec-item">
+        <span class="spec-icon">◈</span>
+        <div>
+          <small>DRIVE</small>
+          <strong>M xDRIVE</strong>
+        </div>
+      </div>
+
+      <div class="spec-item">
+        <span class="spec-icon">◆</span>
+        <div>
+          <small>DESIGN</small>
+          <strong>M5</strong>
+        </div>
+      </div>
+
+      <div class="spec-item">
+        <span class="spec-icon">360</span>
+        <div>
+          <small>EXPERIENCE</small>
+          <strong>FULL 3D</strong>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- SIDE MENU -->
+    <aside id="side-menu">
+
+      <div class="menu-header">
+        <div>
+          <small>EXPLORE</small>
+          <h2>M5</h2>
+        </div>
+
+        <button id="close-menu" aria-label="Close menu">×</button>
+      </div>
+
+
+      <nav class="menu-navigation">
+
+        <button class="menu-item active">
+          <span>01</span>
+          <strong>3D SHOWROOM</strong>
+        </button>
+
+        <button class="menu-item">
+          <span>02</span>
+          <strong>SPECIFICATIONS</strong>
+        </button>
+
+        <button class="menu-item">
+          <span>03</span>
+          <strong>DESIGN</strong>
+        </button>
+
+        <button class="menu-item">
+          <span>04</span>
+          <strong>TECHNOLOGY</strong>
+        </button>
+
+      </nav>
+
+
+      <div class="menu-footer">
+        CODE-BUILT 3D EXPERIENCE
+      </div>
+
+    </aside>
+
+
+    <!-- MENU BACKDROP -->
+    <div id="menu-backdrop"></div>
+
+
+    <!-- SETTINGS -->
+    <section id="settings-panel">
+
+      <div class="settings-header">
+        <div>
+          <small>CONTROL</small>
+          <h2>SETTINGS</h2>
+        </div>
+
+        <button id="close-settings">×</button>
+      </div>
+
+
+      <div class="setting-row">
+
+        <div>
+          <strong>AUTO ROTATE</strong>
+          <small>Automatically rotate the vehicle</small>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="auto-rotate-toggle">
+          <span></span>
+        </label>
+
+      </div>
+
+
+      <div class="setting-row">
+
+        <div>
+          <strong>SHOW GRID</strong>
+          <small>Display the 3D showroom grid</small>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="grid-toggle" checked>
+          <span></span>
+        </label>
+
+      </div>
+
+
+      <div class="setting-row">
+
+        <div>
+          <strong>DARK MODE</strong>
+          <small>Use the dark showroom environment</small>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="dark-toggle" checked>
+          <span></span>
+        </label>
+
+      </div>
+
+    </section>
+
+
+    <!-- SETTINGS BUTTON -->
+    <button id="settings-button" class="settings-button" aria-label="Settings">
+      ⚙
+    </button>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <span>M5 3D EXPERIENCE</span>
+      <span>INTERACTIVE AUTOMOTIVE DESIGN</span>
+    </footer>
+
+  </main>
+
+
+  <!-- IMPORTANT:
+       script.js will contain the complete 3D engine.
+  -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
